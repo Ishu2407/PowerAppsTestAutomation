@@ -62,8 +62,21 @@ jobs:
     # Example: Contoso Test Framework --> Contoso%20Test%20Framework
   - name: LocalProjectName
     value: PowerAppsTestAutomation
+  
+  
+
 
   steps:
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Write your commands here
+        echo 'Hello world'
+        echo $(Build.ArtifactStagingDirectory)
+        ls
+        pwd
+    displayName: 'Temporary task - list files'
   - checkout: self
   - checkout: PowerAppsTestAutomation
   #- template: localsteps.yml # Provide optional local YAML template here
@@ -74,6 +87,7 @@ jobs:
       OnlineUrl: $(PortalUrl)
       BrowserType: ${{ parameters.BrowserType }}
       # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
-      TestAutomationURLFilePath: $(Build.SourcesDirectory)\TestURLs.json
+      TestAutomationURLFilePath: /s/TestURLs.json
       UsePrivateMode: $(PrivateMode)
       LoginMethod: ${{ parameters.LoginMethod }}
+
