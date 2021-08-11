@@ -74,6 +74,7 @@ jobs:
         # Write your commands here
         echo 'Hello world'
         echo $(Build.ArtifactStagingDirectory)
+        cd PowerAppsTestAutomation
         ls
         pwd
     displayName: 'Temporary task - list files'
@@ -87,7 +88,7 @@ jobs:
       OnlineUrl: $(PortalUrl)
       BrowserType: ${{ parameters.BrowserType }}
       # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
-      TestAutomationURLFilePath: /s/TestURLs.json
+      TestAutomationURLFilePath: /d/a/1/s/PowerAppsTestAutomation/TestURLs.json
       UsePrivateMode: $(PrivateMode)
       LoginMethod: ${{ parameters.LoginMethod }}
 
