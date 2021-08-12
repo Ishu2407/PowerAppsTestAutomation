@@ -58,6 +58,7 @@ namespace Microsoft.PowerApps.TestAutomation.Browser
             if (this.PrivateMode)
             {
                 options.AddArgument("--incognito");
+                 options.AddUserProfilePreference("profile.cookie_controls_mode", 0);
             }
 
             if (this.Headless)
