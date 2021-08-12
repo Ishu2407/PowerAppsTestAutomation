@@ -1,7 +1,7 @@
 # File: azure-pipelines.yml
 # Build Name / Format
 name: PowerAppsTestAutomation-$(date:yyyyMMdd)$(rev:.r)
-
+trigger: none
 resources:
   repositories:
     - repository: PowerAppsTestAutomation
